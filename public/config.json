@@ -1,13 +1,74 @@
 {
-  "facility": { "code": "LT_F21", "name": "NHT/Cesanek", "tenant": "LT", "timezone": "America/New_York" },
-  "ticketFilters": {
-    "includeStatuses": ["New", "Open", "Pending"],
-    "excludeStatuses": ["Reopen", "Reopened", "Closed", "Resolved", "Cancelled", "Done"],
-    "excludeInvoiceItems": ["billing", "UF Billing", "storage", "handling"],
-    "ufnFilterEnabled": true
+  "facility": {
+    "code": "LT_F21",
+    "name": "NHT/Cesanek",
+    "tenant": "LT",
+    "timezone": "America/New_York"
   },
-  "customerHealth": { "coverageRule": "all_customers_visible_in_eligible_tickets", "rosterMode": "supplemental_only" },
-  "outlook": { "integration": "non_blocking", "useWhenAvailable": true },
-  "deduplication": { "enabled": true, "scope": "overlapping_ticket_email_threads" },
-  "dashboard": { "sections": ["counts", "priorityQueue", "actionBuckets", "customerHealth", "evidenceMetrics"], "refreshIntervalMinutes": 15 }
+  "ticketFilters": {
+    "includeStatuses": [
+      "New",
+      "Open",
+      "Pending"
+    ],
+    "excludeStatuses": [
+      "Reopen",
+      "Reopened",
+      "Closed",
+      "Resolved",
+      "Cancelled",
+      "Done"
+    ],
+    "excludeInvoiceItems": [
+      "billing",
+      "UF Billing",
+      "storage",
+      "handling"
+    ],
+    "ufnFilterEnabled": true,
+    "authoritativeGate": {
+      "displayStatusSystemStatus": 10,
+      "displayStatusNames": [
+        "New",
+        "Pending"
+      ],
+      "useCloseFlag": false
+    }
+  },
+  "customerHealth": {
+    "coverageRule": "all_customers_visible_in_eligible_tickets",
+    "rosterMode": "supplemental_only"
+  },
+  "outlook": {
+    "integration": "non_blocking",
+    "useWhenAvailable": true,
+    "status": "available"
+  },
+  "deduplication": {
+    "enabled": true,
+    "scope": "overlapping_ticket_email_threads",
+    "conversationIdOnly": true
+  },
+  "dashboard": {
+    "sections": [
+      "counts",
+      "priorityQueue",
+      "actionBuckets",
+      "customerHealth",
+      "evidenceMetrics"
+    ],
+    "refreshIntervalMinutes": 15
+  },
+  "snapshotMetrics": {
+    "refreshId": "refresh-2026-09-12T12:10ET-AUTHORITATIVE-v33",
+    "refreshedAt": "2026-09-12T12:10:00-04:00",
+    "totalRaw": 375,
+    "totalEligible": 296,
+    "excludedCount": 79,
+    "duplicatesRemoved": 5,
+    "invoiceItemsExcluded": 22,
+    "closeFlagTrueRetained": 19,
+    "outlookStatus": "available",
+    "outlookThreadsMatched": 11
+  }
 }
