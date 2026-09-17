@@ -882,20 +882,6 @@
   "slaStatus": "Breached"
  },
  {
-  "ticketId": "UFN-59777",
-  "customer": "GOLDEN BULL MARKETING",
-  "opsStatus": "New",
-  "priority": "Medium",
-  "subject": "RE: Return authorization notification for Order 112-4505161-2497057",
-  "createdDate": "2026-07-01",
-  "lastUpdated": "2026-07-02",
-  "assigned": "",
-  "closeFlag": false,
-  "ageDays": 77,
-  "ageHours": 1851,
-  "slaStatus": "Breached"
- },
- {
   "ticketId": "UFN-59915",
   "customer": "LASSONDE PAPPAS",
   "opsStatus": "New",
