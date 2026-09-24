@@ -6,45 +6,51 @@
   "tenant": "LT",
   "timezone": "America/New_York"
  },
- "lastRefreshed": "2026-09-22T04:17:00-04:00",
+ "lastRefreshed": "2026-09-24T06:40:00-04:00",
  "dataSource": "TicketOps (authoritative)",
  "refreshType": "AUTHORITATIVE",
- "totalRaw": 333,
- "totalRawNote": "open system-status rows = New 232 + Pending 65 + Reopen 36 (excluded)",
- "gateMatched": 297,
- "totalEligible": 268,
- "newCount": 208,
+ "totalRaw": 327,
+ "totalRawNote": "open system-status rows = New 237 + Pending 58 + Reopen 32 (excluded)",
+ "gateMatched": 295,
+ "totalEligible": 278,
+ "newCount": 223,
  "openCount": 0,
- "pendingCount": 60,
- "truncationNote": "closeFlag not a gate; Reopen (36) and billing/storage/handling/invoice items (21) excluded; 8 overlapping same-issue duplicates dropped",
+ "pendingCount": 55,
+ "truncationNote": "closeFlag not a gate; Reopen (32) and billing/storage/handling/invoice items (17) excluded; 0 overlapping same-issue duplicates dropped",
  "slaHealth": {
-  "breached": 231,
-  "onTrack": 37,
-  "unassigned": 217
+  "breached": 235,
+  "onTrack": 43,
+  "unassigned": 240
+ },
+ "actionBuckets": {
+  "Immediate (<24h)": 28,
+  "Short-Term (1-3d)": 20,
+  "Medium (3-7d)": 17,
+  "Watch (>7d)": 213
  },
  "customerHealth": {
-  "totalCustomers": 54,
+  "totalCustomers": 50,
   "tiers": {
-   "Critical": 28,
-   "Warning": 14,
-   "Healthy": 12
+   "Critical": 27,
+   "Warning": 15,
+   "Healthy": 8
   },
   "coverageRule": "all_customers_visible_in_eligible_tickets",
   "rosterMode": "supplemental_only"
  },
  "evidenceMetrics": {
-  "totalEligible": 268,
-  "slaBreached": 231,
-  "slaOnTrack": 37,
-  "unassigned": 217,
-  "oldestAgeDays": 200,
-  "aging15Plus": 174,
-  "billingExcluded": 21,
-  "reopenExcluded": 36,
-  "dedupRemovals": 8,
-  "closeFlagTrueRetained": 23,
-  "outlookThreadsMatched": "stale (carried forward 2026-09-15)",
-  "outlookDirectEligibleMatches": 2,
+  "totalEligible": 278,
+  "slaBreached": 235,
+  "slaOnTrack": 43,
+  "unassigned": 240,
+  "oldestAgeDays": 202,
+  "aging15Plus": 176,
+  "billingExcluded": 17,
+  "reopenExcluded": 32,
+  "dedupRemovals": 0,
+  "closeFlagTrueRetained": 14,
+  "outlookThreadsMatched": "unavailable (non-blocking)",
+  "outlookDirectEligibleMatches": 0,
   "outlookStale": true
  }
 }
