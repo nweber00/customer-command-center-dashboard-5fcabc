@@ -6,51 +6,51 @@
   "tenant": "LT",
   "timezone": "America/New_York"
  },
- "lastRefreshed": "2026-09-24T06:40:00-04:00",
+ "lastRefreshed": "2026-09-26T08:15:00-04:00",
  "dataSource": "TicketOps (authoritative)",
  "refreshType": "AUTHORITATIVE",
- "totalRaw": 327,
- "totalRawNote": "open system-status rows = New 237 + Pending 58 + Reopen 32 (excluded)",
- "gateMatched": 295,
- "totalEligible": 278,
- "newCount": 223,
+ "totalRaw": 324,
+ "totalRawNote": "open system-status rows = New 244 + Pending 55 + Reopen 25 (excluded)",
+ "gateMatched": 299,
+ "totalEligible": 280,
+ "newCount": 230,
  "openCount": 0,
- "pendingCount": 55,
- "truncationNote": "closeFlag not a gate; Reopen (32) and billing/storage/handling/invoice items (17) excluded; 0 overlapping same-issue duplicates dropped",
+ "pendingCount": 50,
+ "truncationNote": "closeFlag NOT a gate; Reopen (25) and billing/storage/handling/invoice items (19) excluded; 0 same-issue duplicate threads dropped (38 recurring thread groups reviewed)",
  "slaHealth": {
-  "breached": 235,
-  "onTrack": 43,
-  "unassigned": 240
+  "breached": 241,
+  "onTrack": 39,
+  "unassigned": 243
  },
  "actionBuckets": {
-  "Immediate (<24h)": 28,
-  "Short-Term (1-3d)": 20,
-  "Medium (3-7d)": 17,
-  "Watch (>7d)": 213
+  "Immediate (<24h)": 4,
+  "Short-Term (1-3d)": 32,
+  "Medium (3-7d)": 29,
+  "Watch (>7d)": 215
  },
  "customerHealth": {
-  "totalCustomers": 50,
+  "totalCustomers": 44,
   "tiers": {
    "Critical": 27,
-   "Warning": 15,
-   "Healthy": 8
+   "Warning": 13,
+   "Healthy": 4
   },
   "coverageRule": "all_customers_visible_in_eligible_tickets",
   "rosterMode": "supplemental_only"
  },
  "evidenceMetrics": {
-  "totalEligible": 278,
-  "slaBreached": 235,
-  "slaOnTrack": 43,
-  "unassigned": 240,
-  "oldestAgeDays": 202,
-  "aging15Plus": 176,
-  "billingExcluded": 17,
-  "reopenExcluded": 32,
+  "totalEligible": 280,
+  "slaBreached": 241,
+  "slaOnTrack": 39,
+  "unassigned": 243,
+  "oldestAgeDays": 205,
+  "aging15Plus": 188,
+  "billingExcluded": 19,
+  "reopenExcluded": 25,
   "dedupRemovals": 0,
   "closeFlagTrueRetained": 14,
-  "outlookThreadsMatched": "unavailable (non-blocking)",
-  "outlookDirectEligibleMatches": 0,
-  "outlookStale": true
+  "outlookThreadsMatched": 5,
+  "outlookDirectEligibleMatches": 5,
+  "outlookStale": false
  }
 }
