@@ -1,44 +1,568 @@
 {
- "lastRefreshed": "2026-09-26T08:15:00-04:00",
- "source": "TicketOps ticket messages (POST /v1/iam/tickets/{id}/messages)",
- "integration": "non_blocking",
- "threadsMatched": 5,
- "threads": [
+ "refreshWindow": {
+  "from": "2026-09-18",
+  "to": "2026-09-26",
+  "tz": "America/New_York"
+ },
+ "threadsMatched": 65,
+ "threadsUniquePostDedup": 58,
+ "ticketThreads": [
   {
-   "id": "461109051042263040",
-   "account": "LASSONDE PAPPAS AND COMPANY, INC.",
-   "title": "Advanced Report - Dock Activity",
-   "severity": "info",
-   "detail": "Automated Blujay TMS report; attachment Dock_Activity_48552736.xlsx; from noreply@tms.blujaysolutions.net to lassondepappas.northampton@unisco.com (UFN-71573)."
+   "customer": "LASSONDE PAPPAS AND COMPANY, INC.",
+   "subject": "Advanced Report - Dock Activity",
+   "direction": "inbound",
+   "ticketRef": "UFN-71573",
+   "source": "fresh"
   },
   {
-   "id": "440070858135408640",
-   "account": "TURTLE BEACH",
-   "title": "Reminder: SEND VIVO DAMAGE REPORT",
-   "severity": "info",
-   "detail": "Teams meeting reminder, Wed 10:00-10:30 ET; 'ensure the VIVO DAMAGE document has been updated prior to 12PM every Wednesday'; from maria.aponte@unisco.com (UFN-64101)."
+   "customer": "TURTLE BEACH",
+   "subject": "Reminder: SEND VIVO DAMAGE REPORT",
+   "direction": "inbound",
+   "ticketRef": "UFN-64101",
+   "source": "fresh"
   },
   {
-   "id": "455771083531747328",
-   "account": "DAYDREAM NUTRITION INC.",
-   "title": "open drop ship orders",
-   "severity": "high",
-   "detail": "Randy Kitchin (COO): 'Below still show open. The last one can be marked as shipped... Can the others be shipped ASAP?' (UFN-70491)."
+   "customer": "DAYDREAM NUTRITION INC.",
+   "subject": "open drop ship orders",
+   "direction": "inbound",
+   "ticketRef": "UFN-70491",
+   "source": "fresh"
   },
   {
-   "id": "458255715035447296",
-   "account": "MIDEA AMERICA CORP",
-   "title": "RE: Backlog",
-   "severity": "medium",
-   "detail": "Fay Foster (Midea load planning) sends PA backlog table (loads 46253574211, 46418014901, 46458831521...) to Amazon/Midea/UNIS distro (UFN-71068)."
+   "customer": "MIDEA AMERICA CORP",
+   "subject": "RE: Backlog",
+   "direction": "inbound",
+   "ticketRef": "UFN-71068",
+   "source": "fresh"
   },
   {
-   "id": "461123296825020416",
-   "account": "HINT INC.",
-   "title": "URGENT PROBLEM Re: Pickup Request: Hint UNIS Outbound Confirmation",
-   "severity": "high",
-   "detail": "3-message thread (UFN-71576): Kelvin Johnson/GlobalTranz 'These loads are not ready... 4 trucks assigned, 2 on site'; Brian Dalder (HINT) 'Please release our product and ship our orders as planned'; UNIS 'do not dispatch drivers until appointment confirmed'. Driver TONU/cancellation risk."
+   "customer": "HINT INC.",
+   "subject": "URGENT PROBLEM Re: Pickup Request: Hint UNIS Outbound Confirmation",
+   "direction": "inbound",
+   "ticketRef": "UFN-71576",
+   "source": "fresh"
+  },
+  {
+   "customer": "AMI / ROAR BEVERAGES",
+   "subject": "Re: Re: AMI New Roar Order - DN-2127953 (Northampton PA)",
+   "direction": "inbound",
+   "ticketRef": "UFN-70893",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "AMI / ROAR BEVERAGES",
+   "subject": "AMI New Roar Order - SO1393032/ DN-2117711 (Northampton PA)",
+   "direction": "inbound",
+   "ticketRef": "UFN-68616",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "AMI / ROAR BEVERAGES",
+   "subject": "UNIS ROAR QVC POWDER MOVE From PA to CA DN-2123888",
+   "direction": "inbound",
+   "ticketRef": "UFN-68601",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "ROAR BEVERAGES / KeHE",
+   "subject": "RE: ROAR BEVERAGES Pick up",
+   "direction": "inbound",
+   "ticketRef": "UFN-69092",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "ROAR BEVERAGES",
+   "subject": "Re: DN-2126156",
+   "direction": "inbound",
+   "ticketRef": "UFN-69050",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "ROAR BEVERAGES / Hub Group",
+   "subject": "Pickup Appointment PO 3878155 - Northampton - Ellettsville",
+   "direction": "inbound",
+   "ticketRef": "UFN-70147",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "HINT INC.",
+   "subject": "UNIS - HINT BEVERAGE - NORTHAMPTON, PA - WEEK OF 9/14/26",
+   "direction": "inbound",
+   "ticketRef": "UFN-70804",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "HINT INC.",
+   "subject": "UNIS - HINT BEVERAGE - NORTHAMPTON, PA - WEEK OF 9/7/26",
+   "direction": "inbound",
+   "ticketRef": "UFN-69781",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "HINT INC.",
+   "subject": "HVP41-1612 Orders | 09/07- 09/11",
+   "direction": "inbound",
+   "ticketRef": "UFN-70261",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "HINT INC.",
+   "subject": "Hint Orders Week 09/08 - 09/11",
+   "direction": "inbound",
+   "ticketRef": "UFN-70118",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "BOUNDLESS EC US LLC",
+   "subject": "Ticket [3569318] was updated. - No Labels on Cases for BOUNDLESS EC US LLC Load# 45872185",
+   "direction": "inbound",
+   "ticketRef": "UFN-70795",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "BOUNDLESS EC US LLC",
+   "subject": "Ticket [3569318] was updated. - No Labels on Cases for BOUNDLESS EC US LLC Load# 45872185",
+   "direction": "inbound",
+   "ticketRef": "UFN-69618",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "BOUNDLESS EC US LLC / Walmart",
+   "subject": "Assistance Needed - Ticket #3569318 | Load 45872185",
+   "direction": "inbound",
+   "ticketRef": "UFN-69617",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "BOUNDLESS EC US LLC",
+   "subject": "Load #45872185 - No Labels on Cases for BOUNDLESS EC US LLC",
+   "direction": "outbound",
+   "ticketRef": "UFN-69771",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "WYNK / CANVAS 340 LLC",
+   "subject": "Update & Cancellation",
+   "direction": "inbound",
+   "ticketRef": "UFN-70753",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "WYNK / CANVAS 340 LLC",
+   "subject": "Cancel Order 229191",
+   "direction": "inbound",
+   "ticketRef": "UFN-70761",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "WYNK / CANVAS 340 LLC",
+   "subject": "Cancel Order - #229381",
+   "direction": "inbound",
+   "ticketRef": "UFN-70764",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "WYNK / CANVAS 340 LLC",
+   "subject": "Cancel Order - #228990",
+   "direction": "inbound",
+   "ticketRef": "UFN-70772",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "COLAVITA USA",
+   "subject": "Pickup appointments / COLAVITA / September 2026",
+   "direction": "inbound",
+   "ticketRef": "UFN-70252",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "COLAVITA USA",
+   "subject": "SO124422 / PO 997609bis / DN-2128230",
+   "direction": "inbound",
+   "ticketRef": "UFN-70553",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "COLAVITA USA",
+   "subject": "Approval to short ship - TO5070",
+   "direction": "inbound",
+   "ticketRef": "UFN-70068",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "COLAVITA USA",
+   "subject": "COLAVITA - WEEK OF 8/31/26-PENDING ORDERS",
+   "direction": "inbound",
+   "ticketRef": "UFN-69953",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "COLAVITA USA",
+   "subject": "COLAVITA WALMART - WEEK 8.31",
+   "direction": "inbound",
+   "ticketRef": "UFN-69017",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "LA FAMOSA / Vitelli Foods (COLAVITA)",
+   "subject": "Order for La Famosa Order #00017979 - pickup appointment request",
+   "direction": "inbound",
+   "ticketRef": "UFN-69116",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "VINWORLD / Romark",
+   "subject": "UNIS --> Romark - Week of 9/14",
+   "direction": "outbound",
+   "ticketRef": "UFN-70413",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "VINWORLD / Romark",
+   "subject": "UNIS --> Edison - Week of 9/14",
+   "direction": "outbound",
+   "ticketRef": "UFN-70414",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "VINWORLD / Romark",
+   "subject": "Transfer Orders",
+   "direction": "inbound",
+   "ticketRef": "UFN-70404",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "VINWORLD / Romark",
+   "subject": "UNIS --> Edison - Week of 9/7",
+   "direction": "outbound",
+   "ticketRef": "UFN-69596",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "MAIZLY INC.",
+   "subject": "Unshipped Orders",
+   "direction": "inbound",
+   "ticketRef": "UFN-70399",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "MAIZLY INC.",
+   "subject": "DN-2129199 SampleTS1281 Loki Coffee",
+   "direction": "inbound",
+   "ticketRef": "UFN-70159",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "MAIZLY INC.",
+   "subject": "DN-2121155 PO3878087 KEHE0034",
+   "direction": "inbound",
+   "ticketRef": "UFN-67809",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "KD NUTRA (Janel Group / Sunteck)",
+   "subject": "URGENT RE: Delivery appointments needed for containers MAEU274833196",
+   "direction": "inbound",
+   "ticketRef": "UFN-70731",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "UNY BRANDS",
+   "subject": "MPW Internal WH Transfer - PA > CA",
+   "direction": "inbound",
+   "ticketRef": "UFN-69129",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "SMEG USA",
+   "subject": "PRO 7126352801",
+   "direction": "inbound",
+   "ticketRef": "UFN-70395",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "SMEG USA",
+   "subject": "PRO 7126352827 BOL Request",
+   "direction": "inbound",
+   "ticketRef": "UFN-70400",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "SMEG USA",
+   "subject": "PRO 7126354054",
+   "direction": "inbound",
+   "ticketRef": "UFN-70084",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "MSC / Medlog",
+   "subject": "MSMU6875562",
+   "direction": "inbound",
+   "ticketRef": "UFN-70448",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "MSC / Medlog",
+   "subject": "MSDU7175119",
+   "direction": "inbound",
+   "ticketRef": "UFN-70447",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "DIAGEO / Ritual Beverage",
+   "subject": "Diageo DNAB Automated Email Alert: UNIS Pick Up Alert Message",
+   "direction": "inbound",
+   "ticketRef": "UFN-69723",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "DIAGEO / Baldor",
+   "subject": "PO101-0001466297 / delivery number 1057590884 - CONFIRM APT FOR COLLECTION",
+   "direction": "inbound",
+   "ticketRef": "UFN-70228",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "DIAGEO / Ritual Beverage",
+   "subject": "PA RITUAL COMMIT FAILED ORDERS",
+   "direction": "inbound",
+   "ticketRef": "UFN-69821",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "DIAGEO",
+   "subject": "Claim 18050 | Diageo Delivery# 1057383854",
+   "direction": "inbound",
+   "ticketRef": "UFN-69811",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "ALLIED BEVERAGE / Ritual",
+   "subject": "P/U REQUEST PO# 309409",
+   "direction": "inbound",
+   "ticketRef": "UFN-68718",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "MARTIGNETTI / Ritual",
+   "subject": "PO 098087",
+   "direction": "inbound",
+   "ticketRef": "UFN-68513",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "KRASDALE FOODS",
+   "subject": "Pick up appointment (A14094-01)",
+   "direction": "inbound",
+   "ticketRef": "UFN-70145",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "PHARMAVITE / KD Pharma",
+   "subject": "Pharmavite PO 352169 (SO110492) - DN-2123596 (special instructions)",
+   "direction": "inbound",
+   "ticketRef": "UFN-68515",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "PHARMAVITE / KD Pharma",
+   "subject": "Pharmavite PO 352168 (SO110487) - DN-2123575 (special instructions)",
+   "direction": "inbound",
+   "ticketRef": "UFN-68506",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "NORDIC / KD Pharma",
+   "subject": "Nordic - PO4500005466 (SO109539A/B) - DN-2126240 & DN-2126248",
+   "direction": "inbound",
+   "ticketRef": "UFN-69103",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "NORDIC / KD Pharma",
+   "subject": "Nordic - PO4500006091 (SO110100A/B) - DN-2126292 & DN-2126300",
+   "direction": "inbound",
+   "ticketRef": "UFN-69120",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "PRIME TIME PACKAGING LTD",
+   "subject": "[SHIPPED][wise/v2][Cesanek][Outbound] - IF48840 - Shipment",
+   "direction": "outbound",
+   "ticketRef": "UFN-69252",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "PRIME TIME PACKAGING LTD",
+   "subject": "[SHIPPED][wise/v2][Cesanek][Outbound] - IF48815 - Shipment",
+   "direction": "outbound",
+   "ticketRef": "UFN-68714",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "PRIME TIME PACKAGING LTD",
+   "subject": "[SHIPPED][wise/v2][Cesanek][Outbound] - IF48851 - Shipment",
+   "direction": "outbound",
+   "ticketRef": "UFN-69462",
+   "source": "carriedForward"
+  },
+  {
+   "customer": "PRIME TIME PACKAGING LTD",
+   "subject": "[SHIPPED][wise/v2][Cesanek][Outbound] - IF48852 - Shipment",
+   "direction": "outbound",
+   "ticketRef": "UFN-69571",
+   "source": "carriedForward"
   }
  ],
- "note": "Partial pull (top recurring thread groups). Remaining groups available on request; non-blocking."
+ "excludedTicketsWithOutlookContext": [],
+ "operationalThreads": [
+  {
+   "subject": "Customer Command Center - Daily Summary (Northampton / Cesanek) - Mon Sep 14, 2026",
+   "from": "no-reply-itemgpt@item.com"
+  },
+  {
+   "subject": "Customer Command Center - NHT/Cesanek Daily Summary - Fri 9/11/2026",
+   "from": "nicole.weber@unisco.com"
+  },
+  {
+   "subject": "Customer Command Center - NHT/Cesanek Daily Summary (Corrected) - Thu 09/10/2026",
+   "from": "nicole.weber@unisco.com"
+  },
+  {
+   "subject": "Customer Command Center - NHT/Cesanek Daily Summary - Thu 09/10/2026",
+   "from": "no-reply-itemgpt@item.com"
+  },
+  {
+   "subject": "Customer Command Center - NHT/Cesanek Daily Summary (Wed, Sep 9, 2026)",
+   "from": "nicole.weber@unisco.com"
+  }
+ ],
+ "activeEscalations": [
+  {
+   "customer": "AMI / ROAR BEVERAGES",
+   "note": "CasAmerica/Atherton repeatedly escalating pickup scheduling for DN-2117711 / DN-2127953; drivers turned away, PO/DN reference confusion unresolved.",
+   "status": "active",
+   "carriedForward": true
+  },
+  {
+   "customer": "BOUNDLESS EC US LLC (via UNY Brands)",
+   "note": "Ricky Beri chasing 2 returned-from-Walmart pallets (Load 45872185 / Ticket #3569318); Central Transport pickups repeatedly slipping.",
+   "status": "active",
+   "carriedForward": true
+  },
+  {
+   "customer": "KD PHARMA / PHARMAVITE",
+   "note": "Silvia Placido escalating missing Pharmavite labels and unshipped orders (DN-2123575 / DN-2123596 / DN-2122820) ahead of the Northampton facility move.",
+   "status": "active",
+   "carriedForward": true
+  },
+  {
+   "customer": "HINT INC.",
+   "note": "Kelvin Johnson/GlobalTranz: 4 trucks assigned, 2 on site, loads not ready; HINT (Brian Dalder) pressing to release product and ship; UNIS holding dispatch until appointment confirmed. Driver TONU/cancellation risk (UFN-71576).",
+   "status": "active",
+   "carriedForward": false
+  }
+ ],
+ "outlookCustomersActive": [
+  "ALLIED BEVERAGE",
+  "AMI / ROAR BEVERAGES",
+  "BOUNDLESS EC US LLC",
+  "COLAVITA USA",
+  "DAYDREAM NUTRITION INC.",
+  "DIAGEO / Ritual Beverage",
+  "HINT INC.",
+  "KD NUTRA (Janel Group)",
+  "KRASDALE FOODS",
+  "LA FAMOSA / Vitelli Foods",
+  "LASSONDE PAPPAS AND COMPANY, INC.",
+  "MAIZLY INC.",
+  "MARTIGNETTI",
+  "MIDEA AMERICA CORP",
+  "MSC / Medlog",
+  "NORDIC",
+  "PHARMAVITE / KD Pharma",
+  "PRIME TIME PACKAGING LTD",
+  "ROAR BEVERAGES",
+  "SMEG USA",
+  "TURTLE BEACH",
+  "UNY BRANDS",
+  "VINWORLD / Romark",
+  "WYNK / CANVAS 340 LLC"
+ ],
+ "coverage": {
+  "eligibleTicketsTotal": 280,
+  "eligibleTicketsWithOutlookDirect": 7,
+  "coveragePct": 2.5,
+  "staleEvidence": false,
+  "note": "Numerator = fresh partial pull (5 representative recurring thread groups) plus carried-forward prior threads that still reference an eligible ticket; denominator recomputed against the 2026-09-26 eligible set (280). Full mailbox sweep not performed this cycle (non-blocking)."
+ },
+ "threadsWithRefsInEligibleSet": [
+  "UFN-71573",
+  "UFN-64101",
+  "UFN-70491",
+  "UFN-71068",
+  "UFN-71576",
+  "UFN-70261",
+  "UFN-70753"
+ ],
+ "threadRefsOutsideEligibleSet": [
+  "UFN-70893",
+  "UFN-68616",
+  "UFN-68601",
+  "UFN-69092",
+  "UFN-69050",
+  "UFN-70147",
+  "UFN-70804",
+  "UFN-69781",
+  "UFN-70118",
+  "UFN-70795",
+  "UFN-69618",
+  "UFN-69617",
+  "UFN-69771",
+  "UFN-70761",
+  "UFN-70764",
+  "UFN-70772",
+  "UFN-70252",
+  "UFN-70553",
+  "UFN-70068",
+  "UFN-69953",
+  "UFN-69017",
+  "UFN-69116",
+  "UFN-70413",
+  "UFN-70414",
+  "UFN-70404",
+  "UFN-69596",
+  "UFN-70399",
+  "UFN-70159",
+  "UFN-67809",
+  "UFN-70731",
+  "UFN-69129",
+  "UFN-70395",
+  "UFN-70400",
+  "UFN-70084",
+  "UFN-70448",
+  "UFN-70447",
+  "UFN-69723",
+  "UFN-70228",
+  "UFN-69821",
+  "UFN-69811",
+  "UFN-68718",
+  "UFN-68513",
+  "UFN-70145",
+  "UFN-68515",
+  "UFN-68506",
+  "UFN-69103",
+  "UFN-69120",
+  "UFN-69252",
+  "UFN-68714",
+  "UFN-69462",
+  "UFN-69571"
+ ],
+ "dataSource": "Outlook (external app agent) + TicketOps ticket messages - NON-BLOCKING enrichment",
+ "generatedAt": "2026-09-26T08:15:00-04:00",
+ "lastRefreshed": "2026-09-26T08:15:00-04:00",
+ "refreshNote": "Partial fresh Outlook pull this cycle (5 recurring thread groups via TicketOps ticket messages). Prior thread evidence (window 2026-09-04 -> 2026-09-15) is carried forward where it still references an eligible ticket; Ticket Ops remains authoritative for ticket status. Coverage denominator recomputed against the 2026-09-26 eligible set.",
+ "carriedForward": false,
+ "freshPullThisCycle": true,
+ "threadsPreviouslyInSetNowOut": []
 }
