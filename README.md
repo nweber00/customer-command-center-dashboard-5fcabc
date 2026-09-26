@@ -33,11 +33,11 @@ Coverage rule: All customers visible in eligible NHT/Cesanek tickets. Configured
 | Excluded | 19 billing/UF Billing/storage/handling/invoice items + 0 overlapping same-issue duplicates; Reopen 25 outside gate |
 | closeFlag | **NOT a gate** — 14 live `closeFlag=true` rows retained (incl. UFN-71542) |
 | Customers | **44** distinct values (all customers visible in eligible tickets; roster supplemental) |
-| Customer Health tiers | Critical 27 / Warning 13 / Healthy 4 |
+| Customer Health tiers | Critical 26 / Warning 14 / Healthy 4 |
 | SLA Risk | **HIGH** – 241 SLA-breached / 39 on-track; 243 unassigned |
 | Oldest ticket | 205 days |
 | Action buckets (by age) | Immediate 4 / Short-Term 32 / Medium 29 / Watch 215 |
-| Outlook Coverage | 5 email-thread groups pulled this cycle (non-blocking); 5 direct eligible matches |
+| Outlook Coverage | **PARTIAL** – 7 of 280 eligible tickets carry direct ticket-thread references (2.5%); one fresh partial pull (5 recurring thread groups) plus carried-forward prior threads (non-blocking) |
 | Last Refresh | 2026-09-26 08:15 ET (**AUTHORITATIVE** – fresh TicketOps pull, 299 gate rows) |
 | Previous refresh | 2026-09-24 06:40 ET — 278 eligible |
 | Next Refresh | ~08:00 ET (daily summary email) |
@@ -64,9 +64,16 @@ Coverage rule: All customers visible in eligible NHT/Cesanek tickets. Configured
 | Medium (3-7d) | 29 |
 | Watch (>7d) | 215 |
 **Derived ops view (subject-line pattern rules, first-match-wins; heuristic, not a TicketOps field):**
-Not recomputed for this snapshot. The pattern rules are not carried in the refresh output for 2026-09-26, and the prior counts (103 / 95 / 28 / 23 / 15 / 14) were derived against the 278-row 2026-09-24 set. A best-effort keyword replay did not reproduce those counts, so no new grouping is published here rather than publishing an unverified one. Prior values remain in git history.
+Re-derived this cycle and labelled **approximate** in `refresh-manifest.json → notes`: the original generator's subject regexes were not available, so the six categories were reclassified with documented keyword rules. Counts sum to 280.
+| Bucket | Count |
+|--------|-------|
+| **Other customer service / ops** | 78 |
+| **Appointment / carrier pickup requests** | 28 |
+| **Order commit-blocked / failed & order-status exceptions** | 60 |
+| **Automated report / notification series** | 98 |
+| **Facility move-out / transfer** | 7 |
+| **Claims / damage / returns** | 9 |
 ### Customer Health (top 12 by breached volume)
-Derived from the row-level `tickets.json` artifact (what the dashboard renders). See the attribution note under Data Freshness Gaps for one row where `refresh-manifest.json` differs.
 | Customer | Tickets | Breached | Oldest breached | Tier |
 |----------|---------|----------|-----------------|------|
 | LASSONDE PAPPAS AND COMPANY, INC. | 68 | 65 | 86d | Critical |
@@ -96,13 +103,15 @@ Derived from the row-level `tickets.json` artifact (what the dashboard renders).
 | 10 | UFN-40654 | NIAGARA BOTTLING LLC | NIAGARA/PLAINFIELD/ DUYTAN/ 4.6- 4.12 | 179d / 4304h | Breached | unassigned |
 ### Data Freshness Gaps
 - `lastUpdated` and `assigned` were supplied by Ticket Ops for all 280 rows; `assigned` empty means unassigned at source (243 of 280).
-- **Outlook context: partial pull this cycle (non-blocking).** 5 representative email-thread groups were retrieved via TicketOps ticket messages; this is a top-thread sample, not a full mailbox sweep, and it contributes 0 rows to any ticket count.
-- Derived (not TicketOps-sourced) values: Customer Health tiers (rule: Critical = ≥1 breached ticket older than 30d; Warning = breached ≤30d; Healthy = no breaches). The ops-view action buckets are **not** recomputed this cycle.
-- **Attribution note (one row):** `refresh-manifest.json → customerHealth.customers` attributes UFN-67291 to "(no organization stored)" (giving RITUAL 7 / blank 4), whereas the row-level `tickets.json` labels that row **RITUAL BEVERAGE COMPANY** (RITUAL 8 / blank 3). Cause: the refresh pipeline's account map has no entry for ticket number 67291, so it defaults to "(no organization stored)". Headline totals reconcile either way (280 tickets, 241 breached, 44 customers), but the tier split does not: the manifest's 27 Critical / 13 Warning reflects the default attribution, while row-level attribution yields **26 Critical / 14 Warning** — "(no organization stored)" drops to Warning (its only remaining breached row is 8d old) and RITUAL stays Critical. The state table above publishes the snapshot's values; the Customer Health table below uses the row-level artifact.
+- **Outlook context: partial pull this cycle (non-blocking).** A fresh partial pull retrieved 5 recurring thread groups via TicketOps ticket messages; prior thread evidence is carried forward where it still references an eligible ticket. 7 eligible tickets carry direct thread references (2.5% of 280); no full mailbox sweep was performed and Outlook contributes 0 rows to any ticket count.
+- Derived (not TicketOps-sourced) values: Customer Health tiers (rule: Critical = ≥1 breached ticket older than 30d; Warning = breached ≤30d; Healthy = no breaches), and the derived ops-view action buckets (re-derived, labelled approximate).
+- **Attribution fix (this cycle).** `UFN-67291` is now attributed to **RITUAL BEVERAGE COMPANY** in both `tickets.json` and `refresh-manifest.json → dashboardState.customerHealth.customers`, resolving the previous inconsistency (manifest had defaulted it to "(no organization stored)" because the pipeline's account map carried no entry for ticket number 67291). Customer Health tiers consequently move to **26 Critical / 14 Warning / 4 Healthy** (was 27/13/4). RITUAL now reads 8 tickets / 7 breached; "(no organization stored)" now reads 3 tickets / 1 breached.
+- **Known cross-artifact discrepancy (unresolved, flagged for the next cycle).** `public/data/structured_list.json → evidenceMetrics.outlookThreadsMatched / outlookDirectEligibleMatches` still read **5 / 5**, whereas `outlook-context.json → coverage` reports **7** direct eligible matches (2.5%) and `threadsWithRefsInEligibleSet` lists 7 refs, all verified present in the 280-row eligible set. This dashboard section publishes the authoritative **7 / 2.5%**; `structured_list.json` will be realigned to 7 when the artifact is next regenerated.
+- **Schema restoration (this cycle):** `refresh-manifest.json` regains the `dashboardState.actionBucketsOpsView` block (6 categories, each `{count, examples}`) and moves `customerHealth` and `previousActive` back inside `dashboardState`; `outlook-context.json` regains its prior 18-key top-level shape. `outlook-context.json` carries two additive per-entry keys that the prior snapshot did not have: `source` ("fresh" | "carriedForward") on each `ticketThreads` entry, and `carriedForward` (bool) on each `activeEscalations` entry. `refresh-manifest.json` adds one new top-level key, `notes`.
 ### Key Correction History
 | Refresh | Time (ET) | Key Change |
 |---------|-----------|------------|
-| refresh-2026-09-26T08:15ET-AUTHORITATIVE | 08:15 | **AUTHORITATIVE REFRESH** – Fresh TicketOps pull: gate 299 (New 244/Pending 55) → **280 eligible** after 19 billing/storage/handling/invoice exclusions (Reopen 25 outside gate, 0 duplicate threads). closeFlag still not a gate (14 retained, incl. UFN-71542). Outlook context partial (5 thread groups, non-blocking). UFN-67030 re-confirmed Solved and absent by status. |
+| refresh-2026-09-26T08:15ET-AUTHORITATIVE | 08:15 | **AUTHORITATIVE REFRESH** – Fresh TicketOps pull: gate 299 (New 244/Pending 55) → **280 eligible** after 19 billing/storage/handling/invoice exclusions (Reopen 25 outside gate, 0 duplicate threads). closeFlag still not a gate (14 retained, incl. UFN-71542). Outlook partial fresh pull (5 thread groups) + carried-forward threads (non-blocking); 7 direct eligible matches (2.5%). **Correction:** UFN-67291 account attribution fixed to RITUAL BEVERAGE COMPANY (tiers now 26 Critical / 14 Warning / 4 Healthy); manifest `actionBucketsOpsView` and `customerHealth`/`previousActive` nesting restored; `outlook-context.json` restored to its prior 18-key shape; ops-view buckets re-derived and labelled approximate. UFN-67030 re-confirmed Solved and absent by status. |
 | refresh-2026-09-24T06:40ET-AUTHORITATIVE | 06:40 | **AUTHORITATIVE REFRESH** – Fresh TicketOps pull: gate 295 (New 237/Pending 58) → **278 eligible** after 17 billing/storage/handling/invoice exclusions (Reopen 32 outside gate, 0 overlap duplicates). closeFlag still not a gate (14 retained). Outlook pull unavailable (non-blocking). UFN-67030 re-confirmed Solved. |
 | refresh-2026-09-22T04:17ET-AUTHORITATIVE | 04:17 | Fresh TicketOps pull: gate 297 → 268 eligible after 21 billing and 8 overlap duplicates; 23 closeFlag=true retained. |
 | refresh-2026-09-15T23:45ET-AUTHORITATIVE | 23:45 | Gate 312 → 291 eligible. 16 billing + 5 duplicates excluded. |
