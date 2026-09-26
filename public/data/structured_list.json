@@ -31,8 +31,8 @@
  "customerHealth": {
   "totalCustomers": 44,
   "tiers": {
-   "Critical": 27,
-   "Warning": 13,
+   "Warning": 14,
+   "Critical": 26,
    "Healthy": 4
   },
   "coverageRule": "all_customers_visible_in_eligible_tickets",
