@@ -55,6 +55,7 @@ Coverage rule: All customers visible in eligible NHT/Cesanek tickets. Configured
 | Overlap duplicates removed | 0 |
 | closeFlag=true retained | 14 |
 | Oldest ticket age | 205d |
+| Outlook coverage | 7 direct eligible matches (2.5%); 58 unique threads (5 fresh + 53 carried forward) |
 ### Action Buckets
 **Primary (dashboard section – age-based, computed client-side):**
 | Bucket | Count |
@@ -106,7 +107,7 @@ Re-derived this cycle and labelled **approximate** in `refresh-manifest.json →
 - **Outlook context: partial pull this cycle (non-blocking).** A fresh partial pull retrieved 5 recurring thread groups via TicketOps ticket messages; prior thread evidence is carried forward where it still references an eligible ticket. 7 eligible tickets carry direct thread references (2.5% of 280); no full mailbox sweep was performed and Outlook contributes 0 rows to any ticket count.
 - Derived (not TicketOps-sourced) values: Customer Health tiers (rule: Critical = ≥1 breached ticket older than 30d; Warning = breached ≤30d; Healthy = no breaches), and the derived ops-view action buckets (re-derived, labelled approximate).
 - **Attribution fix (this cycle).** `UFN-67291` is now attributed to **RITUAL BEVERAGE COMPANY** in both `tickets.json` and `refresh-manifest.json → dashboardState.customerHealth.customers`, resolving the previous inconsistency (manifest had defaulted it to "(no organization stored)" because the pipeline's account map carried no entry for ticket number 67291). Customer Health tiers consequently move to **26 Critical / 14 Warning / 4 Healthy** (was 27/13/4). RITUAL now reads 8 tickets / 7 breached; "(no organization stored)" now reads 3 tickets / 1 breached.
-- **Known cross-artifact discrepancy (unresolved, flagged for the next cycle).** `public/data/structured_list.json → evidenceMetrics.outlookThreadsMatched / outlookDirectEligibleMatches` still read **5 / 5**, whereas `outlook-context.json → coverage` reports **7** direct eligible matches (2.5%) and `threadsWithRefsInEligibleSet` lists 7 refs, all verified present in the 280-row eligible set. This dashboard section publishes the authoritative **7 / 2.5%**; `structured_list.json` will be realigned to 7 when the artifact is next regenerated.
+- **Cross-artifact reconciliation (resolved this cycle).** `public/data/structured_list.json → evidenceMetrics` now agrees with `outlook-context.json → coverage`: `outlookDirectEligibleMatches` = 7 = `coverage.eligibleTicketsWithOutlookDirect` (2.5% of 280), and `outlookThreadsMatched` = 58 = `threadsUniquePostDedup` (5 fresh + 53 carried forward). All 7 refs in `threadsWithRefsInEligibleSet` are verified present in the 280-row eligible set.
 - **Schema restoration (this cycle):** `refresh-manifest.json` regains the `dashboardState.actionBucketsOpsView` block (6 categories, each `{count, examples}`) and moves `customerHealth` and `previousActive` back inside `dashboardState`; `outlook-context.json` regains its prior 18-key top-level shape. `outlook-context.json` carries two additive per-entry keys that the prior snapshot did not have: `source` ("fresh" | "carriedForward") on each `ticketThreads` entry, and `carriedForward` (bool) on each `activeEscalations` entry. `refresh-manifest.json` adds one new top-level key, `notes`.
 ### Key Correction History
 | Refresh | Time (ET) | Key Change |
